@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="org.jboss:jandex:2.0.4.Final" type="repository">
+    <properties maven-id="org.jboss:jandex:2.0.4.Final" />
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/jboss/jandex/2.0.4.Final/jandex-2.0.4.Final.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
