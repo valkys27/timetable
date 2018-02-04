@@ -1,5 +1,9 @@
 package com.unicorn.edu.timetable.service;
 
+import com.unicorn.edu.timetable.repository.StudentRepository;
+import com.unicorn.edu.timetable.repository.StudentRepositoryImpl;
+import com.unicorn.edu.timetable.repository.SubjectRepository;
+import com.unicorn.edu.timetable.repository.SubjectRepositoryImpl;
 import org.hibernate.*;
 import org.hibernate.boot.*;
 import org.hibernate.boot.registry.*;
@@ -13,6 +17,10 @@ public class ServiceLocator {
     private static StandardServiceRegistry registry;
     private static SessionFactory sessionFactory;
     private static EntityManagerFactory entityManagerFactory;
+    private static StudentRepository studentRepository;
+    private static SubjectRepository subjectRepository;
+    private static StudentService studentService;
+    private static SubjectService subjectService;
 
     private ServiceLocator() {}
 
@@ -70,5 +78,29 @@ public class ServiceLocator {
         if (entityManagerFactory != null) {
             entityManagerFactory.close();
         }
+    }
+
+    public static StudentRepository getStudentRepository() {
+        if (studentRepository == null)
+            studentRepository = new StudentRepositoryImpl();
+        return studentRepository;
+    }
+
+    public static SubjectRepository getSubjectRepository() {
+        if (subjectRepository ==  null)
+            subjectRepository = new SubjectRepositoryImpl();
+        return subjectRepository;
+    }
+
+    public static StudentService getStudentService() {
+        if (studentService == null)
+            studentService = new StudentServiceImpl();
+        return studentService;
+    }
+
+    public static SubjectService getSubjectService() {
+        if (subjectService == null)
+            subjectService = new SubjectServiceImpl();
+        return subjectService;
     }
 }

@@ -4,22 +4,20 @@
         "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
 <hibernate-configuration>
     <session-factory>
-        <property name="connection.url">jdbc:mysql://localhost:3306/eshop?serverTimezone=UTC</property>
+        <property name="connection.url">jdbc:mysql://localhost:3306/timetable?serverTimezone=UTC</property>
         <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
 
         <property name="dialect">org.hibernate.dialect.MySQL5Dialect</property>
 
         <property name="connection.username">root</property>
-        <property name="connection.password"></property>
+        <property name="connection.password">valkys27</property>
 
-        <!--<property name="hbm2ddl.auto">create</property>-->
+        <property name="hbm2ddl.auto">create</property>
         <property name="show_sql">true</property>
         <property name="format_sql">true</property>
 
-        <mapping class="com.unicorn.edu.eshop2.repository.entity.Customer"></mapping>
-        <mapping class="com.unicorn.edu.eshop2.repository.entity.Order"></mapping>
-        <mapping class="com.unicorn.edu.eshop2.repository.entity.Item"></mapping>
-        <mapping class="com.unicorn.edu.eshop2.repository.entity.Address"></mapping>
+        <mapping class="com.unicorn.edu.timetable.repository.entity.Student"/>
+        <mapping class="com.unicorn.edu.timetable.repository.entity.Subject"/>
     </session-factory>
 </hibernate-configuration>
 
